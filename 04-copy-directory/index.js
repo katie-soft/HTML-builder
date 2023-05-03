@@ -1,5 +1,3 @@
-const { copyFile } = require('fs');
-
 fs = require('fs');
 path = require('path');
 
@@ -14,7 +12,7 @@ function copyDir(source, target) {
         console.log(err);
       } else {
         files.forEach(file => {
-          copyFile(path.join(__dirname, source, file), path.join(__dirname, target, file), handleError);
+          fs.copyFile(path.join(__dirname, source, file), path.join(__dirname, target, file), handleError);
         })
       }
     });
