@@ -5,7 +5,7 @@ const path = require('path');
 const output = fs.createWriteStream(path.join(__dirname, 'new.txt'));
 
 function checkInput() {
-  stdout.write('Введите текст:\n');
+  stdout.write('Введите текст и нажмите Enter. Для выхода нажмите Ctrl+C либо введите exit:\n');
   stdin.on('data', data => {
     if (data.toString().includes('exit')) {
       process.exit();
